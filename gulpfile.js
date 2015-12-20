@@ -50,7 +50,7 @@
                 baseDir: paths.build.base,
             },
             port:    1337,
-            open:    true,
+            open:    false,
             browser: 'default',
             notify:  false
         });
