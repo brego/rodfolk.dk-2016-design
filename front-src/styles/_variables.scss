@@ -1,0 +1,54 @@
+// 'Web-safe' font stacks
+$font-georgia:   Georgia, Times, 'Times New Roman', serif;
+$font-helvetica: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-lucida:    'Lucida Grande', Tahoma, Verdana, Arial, sans-serif;
+$font-verdana:   Verdana, 'Bitstream Vera Sans', sans-serif;
+$font-monaco:    Monaco, Consolas, 'Courier New', Courier, 'Liberation Mono', monospace;
+
+$font-lato:   "Lato", (#{$font-lucida});
+$font-pt:     "PT Sans", (#{$font-lucida});
+$font-marker: "Permanent Marker", (#{$font-lucida});
+
+$font-body: $font-lato;
+
+$breakpoints: (
+    'phone':        520px,
+    'tablet':       768px,
+    'desktop':      1024px
+);
+
+// Colors
+
+$color-body:         rgba(white, .8);
+// $background-body: #007722;
+// $background-body: teal;
+// $background-body: #0aa9a9;
+// $background-body: #ad613c;
+// $background-body: #c35824;
+$background-body:    #332222;
+$background-wrapper: #b35122;
+
+$color-menu-icon: #f9efe6;
+
+$shadow-body: #ee0000;
+
+// $color-h2: rgba(darkblue, .35);
+$color-h2: rgba(black, .75);
+$color-h3: rgba(#991111, .90);
+$color-h4: rgba(#991111, .75);
+
+$color-link:              inherit;
+$color-link-border:       rgba(white, .5);
+$color-link-hover:        rgba(white, .5);
+$color-link-hover-border: rgba(black, 0);
+
+$color-li-bullet: #991111;
+
+$color-button:            #eeeeee;
+$color-button-hover:      #ffffff;
+$background-button:       #991111;
+$background-button-hover: #5c0606;
+
+
+$background-input:        rgba(#eeeeee, .75);
+$color-input-placeholder: #555555;

@@ -1,0 +1,135 @@
+.a-team {
+    .members {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    li {
+        @extend %transition-timing;
+
+        display:        block;
+        position:       relative;
+        width: 31%;
+        box-sizing:     border-box;
+        margin-bottom:  2em;
+        padding-bottom: 27%;
+        transition:     all .14s;
+        text-align:     left;
+
+        &:before {
+            display: none;
+        }
+
+        a {
+            border-bottom: 0;
+        }
+
+        .name {
+            position:       absolute;
+            bottom:         .5em;
+            left:           -.2em;
+            padding:        0 .2em;
+            color:          #fff;
+            letter-spacing: -.005rem;
+            line-height:    2em;
+            text-shadow:    0;
+        }
+
+        .info {
+            position:    absolute;
+            bottom:      -1.65em;
+            left:        -.2em;
+            text-shadow: 0;
+        }
+
+        .email, .tel {
+            padding: 0 .4em;
+            font-size: .8em;
+        }
+
+        .name, .info {
+            display: inline-block;
+            background-color: rgba(black, .75);
+            font-size: .65em;
+        }
+
+        @include media('>=desktop') {
+
+            .name, .info {
+                @extend %transition-timing;
+
+                transform: translate(-4em, -2em) scale(.2);
+                transition: all .2s;
+                @include opacity(0);
+            }
+
+            &:hover,
+            &:focus {
+                transform: scale(1.1);
+
+                .name, .info, .face {
+                    @include opacity(1);
+                }
+
+                .name {
+                    transform: translate(0, 0) scale(1);
+                }
+
+                .info {
+                    transform: translate(0, 0) scale(1);
+                    transition-duration: .35s;
+                }
+            }
+        };
+
+        @include media('<desktop') {
+            width:          48%;
+            padding-bottom: 43%;
+            // width: 31%;
+            // padding-bottom: 27%;
+
+            .face {
+                opacity: .9;
+            }
+
+            .name, .info {
+                font-size: .75em;
+            }
+        };
+
+        @include media('<=phone') {
+            width: 48%;
+            padding-bottom: 43%;
+
+            .name, .info {
+                font-size: .82em;
+            }
+        };
+    }
+
+    .face {
+        @include position(absolute, 0 0 0 0);
+
+        width:           100%;
+        height:          100%;
+        border-radius:   .2em;
+        background:      imgurl('a-team.jpg') no-repeat;
+        background-size: 100% auto;
+        @include opacity(.8);
+    }
+
+    .adam    { background-position: 0 0; }
+    .hans    { background-position: 0 ((100% / (8 - 1)) * 1); }
+    .jonas   { background-position: 0 ((100% / (8 - 1)) * 2); }
+    .julian  { background-position: 0 ((100% / (8 - 1)) * 3); }
+    .michael { background-position: 0 ((100% / (8 - 1)) * 4); }
+    .morten  { background-position: 0 ((100% / (8 - 1)) * 5); }
+    .sofie   { background-position: 0 ((100% / (8 - 1)) * 6); }
+    .villads { background-position: 0 ((100% / (8 - 1)) * 7); }
+
+    .contact-them-all {
+        padding-top: 2em;
+        text-align:  center;
+    }
+}

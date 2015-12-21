@@ -1,0 +1,40 @@
+/**
+ * Author: John W. Long
+ * http://thesassway.com/intermediate/mixins-for-semi-transparent-colors
+ */
+@mixin rgba-color-fallback($attribute, $color, $background) {
+	$percent:      alpha($color) * 100%;
+	$opaque:       opacify($color, 1);
+	$solid-color:  mix($opaque, $background, $percent);
+	#{$attribute}: $solid-color;
+	#{$attribute}: $color;
+};
+
+@mixin background-color($color, $background) {
+	@include rgba-color-fallback(background-color, $color, $background);
+};
+
+@mixin font-color($color, $background) {
+	@include rgba-color-fallback(color, $color, $background);
+};
+
+
+@function imgurl($file) {
+    @return url("../images/#{$file}");
+}
+
+@function cloudy($pct) {
+    @return rgba(#fff, $pct);
+}
+
+@function murky($pct) {
+    @return rgba(#000, $pct);
+}
+
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    // scss-lint:disable SpaceAroundOperator
+    filter: alpha(opacity=$opacity-ie); //IE8
+    // scss-lint:enable SpaceAroundOperator
+}
